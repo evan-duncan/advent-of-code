@@ -5,3 +5,6 @@
   "Read a file from PROJECT_ROOT/resources"
   [file]
   (slurp (resource file)))
+
+(defmacro with-resource [bindings & body]
+  `(let [~(first bindings) (read-resource ~(last bindings))] ~@body))
