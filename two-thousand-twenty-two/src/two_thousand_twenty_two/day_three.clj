@@ -1,12 +1,9 @@
 (ns two-thousand-twenty-two.day-three
-  (:require [two-thousand-twenty-two.core :refer [read-resource]]
+  (:require [two-thousand-twenty-two.core :refer [read-resource char-range]]
             [clojure.string :refer [split-lines split]]
             [clojure.set :refer [intersection]]))
 
 (def puzzle-input (split-lines (read-resource "day_three.txt")))
-
-(defn char-range [start end]
-  (map char (range (int start) (inc (int end)))))
 
 (def points
   (let [small (apply merge (map hash-map (char-range \a \z) (iterate inc 1)))

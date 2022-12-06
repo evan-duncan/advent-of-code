@@ -1,5 +1,5 @@
 (ns two-thousand-twenty-two.day-four
-  (:require [two-thousand-twenty-two.core :refer [with-resource]]
+  (:require [two-thousand-twenty-two.core :refer [with-resource inclusive-range]]
             [clojure.set :refer [intersection]]
             [clojure.string :refer [split split-lines replace]]))
 
@@ -17,9 +17,6 @@
 (defn either-within? [first-range second-range]
   (or (within? first-range second-range)
       (within? second-range first-range)))
-
-(defn inclusive-range [start stop]
-  (range start (inc stop)))
 
 (with-resource [data "day_four.txt"]
   ;; part one
