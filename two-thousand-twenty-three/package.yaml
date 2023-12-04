@@ -1,0 +1,66 @@
+name:                two-thousand-twenty-three
+version:             0.1.0.0
+github:              "evan-duncan/two-thousand-twenty-three"
+license:             BSD-3-Clause
+author:              "Evan Duncan"
+maintainer:          "evan.e.duncan@gmail.com"
+copyright:           "2023 Evan Duncan"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/evan-duncan/two-thousand-twenty-three#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- bytestring
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  two-thousand-twenty-three-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - two-thousand-twenty-three
+
+tests:
+  two-thousand-twenty-three-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - two-thousand-twenty-three
+    - hspec
+    - hspec-contrib
+    - hspec-discover
+    - QuickCheck
+    - HUnit
+    - conduit-http

@@ -1,0 +1,82 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           two-thousand-twenty-three
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/evan-duncan/two-thousand-twenty-three#readme>
+homepage:       https://github.com/evan-duncan/two-thousand-twenty-three#readme
+bug-reports:    https://github.com/evan-duncan/two-thousand-twenty-three/issues
+author:         Evan Duncan
+maintainer:     evan.e.duncan@gmail.com
+copyright:      2023 Evan Duncan
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/evan-duncan/two-thousand-twenty-three
+
+library
+  exposed-modules:
+      Lib
+    , DayOne
+    , DayFour
+  other-modules:
+      Paths_two_thousand_twenty_three
+  autogen-modules:
+      Paths_two_thousand_twenty_three
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , conduit
+    , directory
+    , http-conduit
+    , monad-logger
+    , parsec
+    , split
+  default-language: Haskell2010
+
+executable two-thousand-twenty-three-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_two_thousand_twenty_three
+  autogen-modules:
+      Paths_two_thousand_twenty_three
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , two-thousand-twenty-three
+  default-language: Haskell2010
+
+test-suite two-thousand-twenty-three-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_two_thousand_twenty_three
+    , DayOneSpec
+  autogen-modules:
+      Paths_two_thousand_twenty_three
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , two-thousand-twenty-three
+    , hspec
+    , hspec-contrib
+    , hspec-discover
+    , QuickCheck
+    , HUnit
+  default-language: Haskell2010
