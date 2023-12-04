@@ -5,9 +5,9 @@
 (defn bom-finder [n]
   (fn [s]
     (->> (partition n 1 s)
-         (filter #(apply distinct? %))
+         (filter distinct?)
          first
-         (apply str))))
+         str)))
 
 (def bom (bom-finder 4))
 (def mom (bom-finder 14))
